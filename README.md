@@ -1,59 +1,124 @@
-# FarmForge - Dexponent Strategy Builder
+# 🌾 FarmForge – Strategy Builder for Dexponent
 
-FarmForge is a fully functional web application for the Dexponent Hackathon Festival that allows Asset Managers to define and deploy new Farms via a user-friendly, multi-step wizard.
+FarmForge is a powerful multi-step wizard interface that enables Asset Managers to define, preview, and deploy new yield-generating Farms within the [Dexponent Protocol](https:/dexponent.com/). Built for the Dexponent Hackathon Festival, FarmForge combines intuitive UX with advanced blockchain integrations to simplify decentralized finance strategy creation.
 
-## Features
 
-- **Multi-Step Wizard Form**:
-  - Step 1: Select Strategy Type, enter Target APY, set risk tolerance
-  - Step 2: Choose Collateral Assets from a predefined list with real-time price feeds
-  - Step 3: Define Verifier Requirements and Risk Profiles
-  - Step 4: Show calculated Sharpe Ratio, benchmark expectations, fee structure breakdown
-  - Step 5: Final Deployment Summary with wallet connection and transaction submission
+## 🚀 Features
 
-- **Live Price Data**:
-  - Integration with Uniswap V3 TWAP Oracle (simulated)
-  - Real-time asset prices in step 2
-  - TWAP to simulate estimated Sharpe benchmarks in step 4
+- 🔄 **Multi-Step Wizard**  
+  Guided form interface for configuring strategy type, target APY, collateral assets, verifier settings, and deployment details.
 
-- **Smart Contract Interaction**:
-  - Connect via MetaMask or WalletConnect
-  - Send structured data from the wizard to deploy a new Farm instance on-chain
-  - Transaction confirmation and failure handling
+- 🔗 **Live Uniswap V3 TWAP Integration**  
+  Real-time asset price feeds to assist with risk modeling and Sharpe benchmark estimation.
 
-## Tech Stack
+- 🧠 **Sharpe Consensus Preview**  
+  Dynamic simulation of performance benchmarks and risk-adjusted return metrics.
 
-- **Frontend**: React.js, React Hook Form, Zustand, Tailwind CSS, Framer Motion
-- **Blockchain**: Ethers.js, MetaMask / WalletConnect
-- **Data Fetching**: React Query + Axios for TWAP oracle API
-- **Smart Contracts**: Dexponent-compatible contracts (simulated)
+- 🔐 **Smart Contract Deployment**  
+  Direct integration with Dexponent protocol contracts via Ethers.js and MetaMask/WalletConnect.
 
-## Setup
+- 📱 **Responsive, User-Friendly Interface**  
+  Built with React.js and Tailwind CSS to ensure seamless UX across devices.
 
-1. Clone the repository
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Start the development server:
-   ```
-   npm run dev
-   ```
+## 🏗️ Tech Stack
 
-## Project Structure
+| Layer | Technology |
+|-------|------------|
+| **Frontend** | React.js, React Hook Form, Tailwind CSS, Zustand |
+| **Blockchain** | Ethers.js, MetaMask / WalletConnect |
+| **Data Layer** | React Query, Axios |
+| **Oracle** | Uniswap V3 TWAP Oracle |
+| **Smart Contracts** | Dexponent Deployment Contract (assumed pre-deployed) |
+| **Hosting** | Vercel |
 
-- `/src/components`: UI components
-  - `/ui`: Reusable UI components
-  - `/wizard`: Wizard step components
-  - `/layout`: Layout components
-- `/src/services`: API and blockchain services
-- `/src/store`: Zustand state management
-- `/src/types`: TypeScript type definitions
 
-## Deployment
+## 🧰 Getting Started
 
-The application can be deployed to Vercel or Netlify.
+### 🔧 Prerequisites
 
-## License
+- Node.js >= 18.x
+- Yarn or npm
+- MetaMask browser extension
 
-MIT
+### 📦 Install Dependencies
+
+```bash
+git clone https://github.com/sambitsargam/farmforge.git
+cd farmforge
+npm install
+````
+
+### 🧪 Run Locally
+
+```bash
+npm run dev
+```
+
+Open `http://localhost:3000` in your browser.
+
+---
+
+## 📁 Project Structure
+
+```
+├── components/
+│   ├── Wizard/
+│   ├── Steps/
+│   └── UI/
+├── hooks/
+├── services/
+│   ├── uniswapOracle.ts
+│   └── deployFarm.ts
+├── state/
+│   └── useFarmStore.ts
+├── utils/
+├── pages/
+│   └── index.tsx
+├── public/
+├── README.md
+└── tailwind.config.js
+```
+
+## 🔗 Smart Contract Integration
+
+* The form collects data aligned with Dexponent’s Root Farm architecture.
+* Contract interaction is handled via Ethers.js using a `deployFarm()` function.
+* Uses connected wallet (MetaMask or WalletConnect) to sign and send deployment transaction.
+
+
+## 📈 Real-Time Oracle Data
+
+* TWAP prices fetched from Uniswap V3 Oracle.
+* Used for previewing Sharpe ratio benchmarks and estimating fees.
+
+
+## 🌍 Live Demo
+
+[https://farmforge.vercel.app](https://farmforge.vercel.app)
+
+
+## 📚 Resources
+
+* [Dexponent Docs](https://docs.dexponent.com/)
+* [Uniswap V3 Oracle Guide](https://docs.uniswap.org/protocol/reference/core/libraries/OracleLibrary)
+* [React Hook Form](https://react-hook-form.com/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [Zustand](https://github.com/pmndrs/zustand)
+
+
+## 📄 License
+
+MIT License © 2025 \[Sambit Sargam Ekalabya]
+
+
+## 🤝 Contributing
+
+Contributions are welcome! Please fork the repo and submit a pull request with improvements or new features.
+
+## 💬 Contact
+
+* Twitter: [@sambitsargam](https://twitter.com/sambitsargam)
+
+## 🏆 Part of the Dexponent Hackathon Festival
+
+This project was created as part of the Dexponent Hackathon Festival to demonstrate compliant, modular DeFi strategy deployment using open-source tooling. Let's build the future of decentralized finance together.
